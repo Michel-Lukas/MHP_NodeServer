@@ -7,16 +7,16 @@
 <style>
 </style>
 <script>
-    // async function getData() {
-    //     console.log("Getting the Data from REST API")
-    //     const response = await fetch("http://localhost:3000/api", { mode: "no-cors"})
-    //     console.log(response)
-    //     const data = await response.json();
-    //     console.log(data)
-    //     // show(data)
-    // }
-    //
-    // getData()
+    async function getData() {
+        console.log("Getting the Data from REST API")
+        const response = await fetch("http://localhost:3000/api")
+        console.log(response)
+        const data = await response.json();
+        console.log(data)
+        // show(data)
+    }
+
+    getData()
 
     // function show(data) {
     //     let table =
