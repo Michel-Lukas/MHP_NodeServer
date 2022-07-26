@@ -2,6 +2,6 @@
 
 ## Scripts im Package.json
 
-## Npm run start für backend
+## -> 'Npm start' für backend
 
-## npm run dev für client+server (noch nicht implementiert)
+## -> 'npm dev' für client+server (noch nicht implementiert)

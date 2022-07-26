@@ -9,21 +9,32 @@ CSVToJSON().fromFile('db.csv')
         // users is a JSON array
         // log the JSON array
         json = users
-        console.log(json);
     }).catch(err => {
     // log error if any
     console.log(err);
 });
 
-// Starting a server
+// Add dependency
 const http = require("http")
 
-let app = http.createServer((req, res) => {
-    // Set Header as JSON
-    res.writeHead(200, {"Content-Type": "application/json"})
+const host = "localhost"
+const port = 3000
+
+const requestListener = function (req, res) {
+    res.setHeader("Content-Type", "application/json")
+    res.writeHead(200)
     res.end(JSON.stringify(json))
+}
+
+const server = http.createServer(requestListener)
+server.listen(port, host, () => {
+    console.log(`Server is running on http://${host}:${port}`)
+    console.log(__dirname)
 })
 
-app.listen(3000, "127.0.0.1")
-console.log("Node Server running on port 3000")
+
+
+
+
+
 

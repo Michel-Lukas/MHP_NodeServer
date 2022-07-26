@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Node HTML Server</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
+<script>
+    async function getData() {
+        const response = await fetch("/")
+        var data = await response.json()
+        console.log(data)
+        show(data)
+    }
+
+    getData()
+
+    function show(data) {
+        let table =
+            `<tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>Age</th>
+            </tr>`
+
+        for (let row of data.list) {
+            table += `<tr>
+            <td>${row.name} </td>
+            <td>${row.name} </td>
+            <td>${row.name} </td>
+            <td>${row.name} </td>
+        </tr>`
+        }
+
+        document.getElementById("people").innerHTML = table
+    }
+</script>
+<body>
+
+<div class="">
+    <h1>Node Server</h1>
+    <p>Dynamically reading JSON into table</p>
+    <table id="people"></table>
+</div>
+
+</body>
+</html>
