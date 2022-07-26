@@ -14,22 +14,18 @@ CSVToJSON().fromFile('db.csv')
     console.log(err);
 });
 
-// Add dependency
-const http = require("http")
+const express = require("express")
 
-const host = "localhost"
-const port = 3000
+const app = express()
 
-const requestListener = function (req, res) {
-    res.setHeader("Content-Type", "application/json")
-    res.writeHead(200)
-    res.end(JSON.stringify(json))
-}
-
-const server = http.createServer(requestListener)
-server.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`)
+app.get("/api", function (req, res) {
+    res.status(200).send(json)
 })
+
+app.listen(3000, () =>
+    console.log("Backend running on port 3000")
+)
+
 
 
 

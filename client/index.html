@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<title>Node HTML Server</title>
+<title>Table Generator</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="">
 <style>
 </style>
 <script>
-    async function getData() {
-        const response = await fetch("http://localhost:3000/")
-        var data = await response.json()
-        console.log(data)
-        show(data)
-    }
-
-    getData()
+    // async function getData() {
+    //     console.log("Getting the Data from REST API")
+    //     const response = await fetch("http://localhost:3000/api", { mode: "no-cors"})
+    //     console.log(response)
+    //     const data = await response.json();
+    //     console.log(data)
+    //     // show(data)
+    // }
+    //
+    // getData()
 
     // function show(data) {
     //     let table =
