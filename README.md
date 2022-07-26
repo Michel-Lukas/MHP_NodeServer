@@ -2,7 +2,7 @@
 
 ### Scripts im Package.json
 
-### -> 'npm start' für backend
+### -> 'npm run server' für backend
 
 ### -> 'npm run client' für frontend
 
