@@ -1,7 +1,9 @@
-### MHP_NodeServer
+## MHP_NodeServer
 
-## Scripts im Package.json
+### Scripts im Package.json
 
-## -> 'Npm start' für backend
+### -> 'npm start' für backend
 
-## -> 'npm dev' für client+server (noch nicht implementiert)
+### -> 'npm run client' für frontend
+
+### -> 'npm run dev' für client+server (noch nicht implementiert)
