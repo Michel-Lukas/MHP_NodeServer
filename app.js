@@ -6,13 +6,9 @@ let json;
 // convert users.csv file to JSON array
 CSVToJSON().fromFile('db.csv')
     .then(users => {
-        // users is a JSON array
-        // log the JSON array
+        // Log Users and write them onto variable
         console.log(users);
         json = users
-    }).catch(err => {
-    // log error if any
-    console.log(err);
 });
 
 // Declare Express
