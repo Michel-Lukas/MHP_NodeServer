@@ -4,6 +4,6 @@
 
 ### -> 'npm run server' für backend
 
-### -> 'npm run client' für frontend
+### -> 'cd client -> http-server' für frontend
 
-### -> 'npm run dev' für client+server (noch nicht implementiert)
+### -> 'npm run dev' für client+server (funzt nicht)
