@@ -1,13 +1,14 @@
-// CVStoJSON Module
-const CSVToJSON = require('csvtojson')
+// require csvtojson module
+const CSVToJSON = require('csvtojson');
 
-let json
+let json;
 
-// convert CSV to JSON Array
+// convert users.csv file to JSON array
 CSVToJSON().fromFile('db.csv')
     .then(users => {
         // users is a JSON array
         // log the JSON array
+        console.log(users);
         json = users
     }).catch(err => {
     // log error if any
@@ -25,7 +26,7 @@ app.get("/api", function (req, res) {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
     })
-    res.status(200).send(json)
+    res.send(JSON.stringify(json))
 })
 
 const cors = require("cors")

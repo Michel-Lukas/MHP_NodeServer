@@ -4,9 +4,13 @@
 <title>Table Generator</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 </style>
 <script>
+    let array;
+
+    // Fetch Data from API
     async function getData() {
         console.log("Getting the Data from REST API")
         const response = await fetch("http://localhost:3000/api")
@@ -14,38 +18,52 @@
         const data = await response.json();
         console.log(data)
         // show(data)
+        array = data
+        console.log("Data received!")
+        console.log(array[0].id)
     }
 
     getData()
-
-    // function show(data) {
-    //     let table =
-    //         `<tr>
-    //             <th>ID</th>
-    //             <th>Name</th>
-    //             <th>Email</th>
-    //             <th>Country</th>
-    //             <th>Age</th>
-    //         </tr>`
-    //
-    //     for (let row of data.list) {
-    //         table += `<tr>
-    //         <td>${row.name} </td>
-    //         <td>${row.name} </td>
-    //         <td>${row.name} </td>
-    //         <td>${row.name} </td>
-    //     </tr>`
-    //     }
-    //
-    //     document.getElementById("people").innerHTML = table
-    // }
 </script>
-<body>
 
-<div class="">
-    <h1>Node Server</h1>
-    <p>Dynamically reading JSON into table</p>
+<body>
+<div>
+    <p>NODE HTML API</p>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Age</th>
+        </tr>
+
+        <tbody id="myTable">
+
+        </tbody>
+    </table>
 </div>
 
 </body>
+
+<script>
+
+    buildTable(array)
+
+    function buildTable(data) {
+        var table = document.getElementById("myTable")
+
+        for (var i = 0; data.length; i++) {
+            var row = `<tr>
+							<td>${data[i].id}</td>
+							<td>${data[i].name}</td>
+							<td>${data[i].email}</td>
+							<td>${data[i].country}</td>
+							<td>${data[i].age}</td>
+					  </tr>`
+            table.innerHTML += row
+        }
+    }
+</script>
 </html>
