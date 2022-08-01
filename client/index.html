@@ -5,65 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<style>
-</style>
-<script>
-    let array;
-
-    // Fetch Data from API
-    async function getData() {
-        console.log("Getting the Data from REST API")
-        const response = await fetch("http://localhost:3000/api")
-        console.log(response)
-        const data = await response.json();
-        console.log(data)
-        // show(data)
-        array = data
-        console.log("Data received!")
-        console.log(array[0].id)
-    }
-
-    getData()
-</script>
-
 <body>
-<div>
-    <p>NODE HTML API</p>
+    <div>
+        <p>NODE HTML API</p>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Country</th>
-            <th>Age</th>
-        </tr>
+        <button>GET</button>
 
-        <tbody id="myTable">
+        <div id="table"></div>
+    </div>
 
-        </tbody>
-    </table>
-</div>
-
+    <script src="script.js"></script>
 </body>
-
-<script>
-
-    buildTable(array)
-
-    function buildTable(data) {
-        var table = document.getElementById("myTable")
-
-        for (var i = 0; data.length; i++) {
-            var row = `<tr>
-							<td>${data[i].id}</td>
-							<td>${data[i].name}</td>
-							<td>${data[i].email}</td>
-							<td>${data[i].country}</td>
-							<td>${data[i].age}</td>
-					  </tr>`
-            table.innerHTML += row
-        }
-    }
-</script>
 </html>
