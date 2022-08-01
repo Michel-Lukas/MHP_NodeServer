@@ -4,6 +4,6 @@
 
 ### -> 'npm run server' für backend
 
-### -> 'cd client -> http-server' für frontend
+### -> 'cd client' -> 'http-server' für frontend
 
-### -> 'npm run dev' für client+server (funzt nicht)
+### Click 'Get' to create table
