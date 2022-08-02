@@ -3,7 +3,7 @@ let array;
 // Fetch Data from API
 async function getData() {
     console.log("Getting the Data from REST API")
-    const response = await fetch("http://localhost:3000/api")
+    const response = await fetch("https://node-json-table-reader.herokuapp.com/api")
     console.log(response)
     const data = await response.json();
     console.log(data)

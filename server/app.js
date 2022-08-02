@@ -4,7 +4,7 @@ const CSVToJSON = require('csvtojson');
 let json;
 
 // convert users.csv file to JSON array
-CSVToJSON().fromFile('db.csv')
+CSVToJSON().fromFile("server/db.csv")
     .then(users => {
         // users is a JSON array
         // log the JSON array
@@ -32,11 +32,11 @@ app.get("/api", function (req, res) {
 const cors = require("cors")
 
 app.use(cors({
-    origin: "*"
+    origin: "localhost:8080"
 }))
 
 // Start server on Port 3000
-app.listen(3000, () =>
+app.listen(process.env.PORT || 3000, () =>
     console.log("Backend running on port 3000")
 )
 
