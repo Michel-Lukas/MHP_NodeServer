@@ -17,7 +17,12 @@ button {
     padding: 10px 35px;
     background-color: #fff;
     border: none;
-    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 #table {
